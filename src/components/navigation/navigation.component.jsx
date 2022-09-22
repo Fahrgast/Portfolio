@@ -17,9 +17,6 @@ const Navigation = () => {
   const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
   const handleNavToggle = () => {
-    const navigationContentContainer = document.querySelector(
-      ".navigation-content-container"
-    );
     const navLinksContainer = document.querySelector(".nav-links-container");
     const navLinkStyle = getComputedStyle(navLinksContainer);
     const bubbleSlider = document.querySelector(".nav-toggle-bubble");
@@ -27,11 +24,9 @@ const Navigation = () => {
     toggleNavbar(!navbarToggled);
 
     if (navLinkStyle.display === "none") {
-      navigationContentContainer.classList.add("toggled");
       bubbleSlider.classList.add("toggle-slide-in");
       bubbleSlider.classList.remove("toggle-slide-out");
     } else {
-      navigationContentContainer.classList.remove("toggled");
       bubbleSlider.classList.add("toggle-slide-out");
       bubbleSlider.classList.remove("toggle-slide-in");
     }
@@ -40,10 +35,15 @@ const Navigation = () => {
   };
 
   const handleNavLinkPop = () => {
+    const navigationContentContainer = document.querySelector(
+      ".navigation-content-container"
+    );
     const navLinksContainer = document.querySelector(".nav-links-container");
     const navLinkContainer = document.querySelectorAll(".navlink-container");
     const navLinksContainerStyle = getComputedStyle(navLinksContainer);
     const navItemBubble = document.querySelectorAll(".navlink-bubble");
+
+    const overlay = document.querySelector(".overlay");
 
     if (navLinksContainerStyle.display === "none") {
       popIn();
@@ -53,6 +53,9 @@ const Navigation = () => {
 
     async function popIn() {
       navLinksContainer.style.display = "flex";
+      navigationContentContainer.classList.add("toggled");
+      overlay.classList.add("overlay-toggled");
+
       for (var i = 0; i < 3; i++) {
         await timer(500);
         navItemBubble[i].classList.remove("pop-out");
@@ -72,29 +75,34 @@ const Navigation = () => {
       navLinkContainer[2].style.display = "none";
 
       navLinksContainer.style.display = "none";
+      navigationContentContainer.classList.remove("toggled");
+      overlay.classList.remove("overlay-toggled");
     }
   };
 
   return (
-    <div className="navigation-container">
-      <NavLink className="logo-container">
-        <img src={logo} alt="logo" className="logo" />
-        <img src={logoBubble} alt="" className="logo-bubble" />
-      </NavLink>
-      <div className="navigation-content-container">
-        <img
-          className="mobile-navbar-icon"
-          alt="open mobile menu"
-          onClick={() => handleNavToggle()}
-          src={navbarToggled ? closeIcon : hamburger}
-        />
-        <img src={toggleBubble} alt="" className="nav-toggle-bubble" />
-        <div className="nav-links-container">
-          <NavigationLink name="Home" />
-          <NavigationLink name="About Me" />
-          <NavigationLink name="Projects" />
+    <div className="wrapper">
+      <div className="navigation-container">
+        <NavLink className="logo-container">
+          <img src={logo} alt="logo" className="logo" />
+          <img src={logoBubble} alt="" className="logo-bubble" />
+        </NavLink>
+        <div className="navigation-content-container">
+          <img
+            className="mobile-navbar-icon"
+            alt="open mobile menu"
+            onClick={() => handleNavToggle()}
+            src={navbarToggled ? closeIcon : hamburger}
+          />
+          <img src={toggleBubble} alt="" className="nav-toggle-bubble" />
+          <div className="nav-links-container">
+            <NavigationLink name="Home" />
+            <NavigationLink name="About Me" />
+            <NavigationLink name="Projects" />
+          </div>
         </div>
       </div>
+      <div className="overlay"></div>
     </div>
   );
 };
