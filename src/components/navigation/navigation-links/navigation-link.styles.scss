@@ -1,0 +1,49 @@
+
+.navlink-container{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.75rem;
+    margin-right: 1rem;
+
+    .nav-text-container{
+        position: absolute;
+    }
+
+    .nav-link{
+        display: inline-block;
+        align-self: center;
+        margin-left: 1rem;
+    }
+
+    .navlink-bubble{
+        align-self: center;
+        z-index: -1;
+        right: 1.3rem;
+        width: 150px;
+
+        filter: drop-shadow( 5px 5px 4px rgba(0, 0, 0, 0.25));
+   }
+
+    .pop-in{
+        animation: 1s  popIn;
+        animation-timing-function: linear;
+
+        @keyframes popIn{
+            25%  {transform: scale(1.1);}
+            75%  {transform: scale(1);}
+          }
+    }
+
+    .pop-out{
+        animation: 0.75s  popOut;
+        animation-timing-function: linear;
+
+        @keyframes popOut{
+            25%  {transform: scale(1.5);}
+            75%  {transform: scale(2);}
+            95% {transform: scale(2.5);}
+            100% {transform: scale(0);}
+          }
+    }
+}

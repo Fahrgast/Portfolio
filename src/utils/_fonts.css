@@ -1,0 +1,17 @@
+:root{
+    --heading-fontsize: clamp(40px, 8vw, 80px);
+    --heading-two-fontsize: clamp(30px, 6vw, 60px);
+    --heading-three-fontsize: clamp(20px, 4vw, 40px);
+    --heading-four-fontsize: clamp(16px, 2vw, 20px);
+    --text-fontsize: clamp(15px, 2vw, 17px);;
+
+    --heading-spacing: 5px;
+    --heading-two-spacing: 2.7px;
+    --navtext-spacing: 2.7px;
+
+    --text-lineheight: 20px;
+    
+    --heading-family: 'Helvetica Neue', sans-serif;
+    --text-family: 'Garamond', sans-serif;
+}
+

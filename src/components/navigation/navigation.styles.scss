@@ -1,0 +1,126 @@
+@use "../../utils/index" as utils;
+
+.navigation-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    font-size: var(--heading-four-fontsize);
+    letter-spacing: var(--navtext-spacing);
+    text-transform: uppercase;
+
+    margin: 1rem 1.5rem;
+
+    .logo-container{
+        .logo{
+            width: 55px;
+            margin-left: 0.5rem;
+        }
+
+        .logo-bubble{
+            position: absolute;
+            top: -2px;
+            left: -1px;
+
+            z-index: -1;
+
+            filter: drop-shadow( 5px 5px 4px rgba(0, 0, 0, 0.25));
+        }       
+    }
+
+    .navigation-content-container{      
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column; 
+
+        .mobile-navbar-icon{
+            height: 21px;
+            width: 24px;
+            align-self: flex-end;
+        }
+
+        .nav-toggle-bubble{
+            position: absolute;
+            top: -1rem;
+            right: -1.5rem;
+            z-index: -2;
+
+            height: 0;
+            filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        .toggle-slide-in{
+            animation: 1.5s  slideIn;
+            animation-timing-function: linear;
+            height: 300px;
+
+            @keyframes slideIn {
+                0% {
+                  height: 0;
+                }
+              
+                50% {
+                    height: 300px;
+                    transform: scale(1);
+                }
+
+                55%{
+                    height: 300px;
+                    transform: scale(1);
+                }
+
+                75%{
+                    transform: scale(1.1);
+                }
+
+                100%{
+                    transform: scale(1);
+                }
+            } 
+        }
+
+        .toggle-slide-out{
+            animation: 0.75s  slideOut;
+            animation-timing-function: linear;
+            height: 0;
+
+            @keyframes slideOut {
+                0%{
+                    transform: scale(1);
+                    height: 300px;
+                }
+                50%{
+                    transform: scale(1.5);
+                }
+                90%{
+                    transform: scale(2);
+                }
+                95%{
+                    transform: scale(2.2);
+                    height: 300px;
+                }
+                100%{
+                    transform: scale(0);
+                    height: 0;
+                }
+            }
+        }
+
+        .nav-links-container{
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            
+            color: var(--white);
+        }
+    }
+
+}
+
+.toggled{
+    width: 55%;
+    position: sticky;
+    right: 0;
+}
