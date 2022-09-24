@@ -1,14 +1,3 @@
-background-bubbles: 1
-Nav-background-bubble: 4
-logo-bubble: 5
-nav-item-bubble: 5
-
-overlay: 3
-nav-text: 6
-text: 2
-
------------------------
-
 nav-text: 0
 nav-item-bubble: -1
 logo-bubble: -1

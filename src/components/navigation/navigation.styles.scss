@@ -14,18 +14,15 @@
 
     .logo-container{
         .logo{
-            width: 55px;
-            margin-left: 0.5rem;
-            z-index: 0;
+            width: 55px;  
+            z-index: var(z-nav-text);
         }
 
         .logo-bubble{
             position: absolute;
             top: -2px;
             left: -1px;
-
-            z-index: -1;
-
+            z-index: var(--z-logo-bubble);
             filter: drop-shadow( 5px 5px 4px rgba(0, 0, 0, 0.25));
         }       
     }
@@ -45,12 +42,13 @@
             position: absolute;
             top: -1rem;
             right: -1.5rem;
-            z-index: -2;
+            z-index: var(--z-mobile-nav-background-bubble);
 
             height: 0;
             filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
         }
 
+        /* Animation for mobile Navbar sliding in */
         .toggle-slide-in{
             animation: 1.5s  slideIn;
             animation-timing-function: linear;
@@ -81,6 +79,7 @@
             } 
         }
 
+        /* Animation for mobile Navbar sliding Out */
         .toggle-slide-out{
             animation: 0.75s  slideOut;
             animation-timing-function: linear;
@@ -117,15 +116,16 @@
             color: var(--white);
         }
     }
-
 }
 
+// Expand mobile Nav after click  on hamburger
 .toggled{
     width: 55%;
     position: fixed;
     right: 1.5rem;
 }
 
+// Show mobile overlay after click on hamburger
 .overlay-toggled{
     height: 100vh;
     position:absolute;
@@ -135,7 +135,46 @@
     bottom:0;
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(5px);
-    z-index: -3;
+    z-index: var(--z-overlay);
+}
+
+/* Medium Screen width */
+@include utils.breakpoint(medium){
+    .wrapper{
+        .navigation-container{
+            align-items: center;
+
+            .logo-bubble{
+                width: 125px;
+                height: 120px;
+            }
+
+            .navigation-content-container{
+                .mobile-navbar-icon{
+                    display: none;
+                }
+
+                .nav-links-container{
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
+
+/* Large Screen width */
+@include utils.breakpoint(large){
+    .wrapper{
+        .navigation-container{
+            align-items: center;
+
+            .logo-bubble{
+                width: 150px;
+                height: 140px;
+            }
+        }
+    }
 }
 
 

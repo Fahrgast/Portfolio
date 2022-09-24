@@ -18,19 +18,28 @@ a, a:visited, a:active{
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4{
+  font-family: var(--heading-family);
+  font-weight: bold;
+}
+
 h1{
   font-size: var(--heading-fontsize);
+  color: var(--white);
 }
 h2{
   font-size: var(--heading-two-fontsize);
+  color: var(--bright-green);
+  letter-spacing: var(--heading-two-spacing);
+  font-weight: normal;
 }
 h3{
   font-size: var(--heading-three-fontsize);
+  font-family: var(--text-family);
+  color: var(--light-purple);
 }
-
-h1, h2, h3{
-  color: var(--white);
-  font-family: var(--heading-family);
+h4{
+  font-size: var(--heading-four-fontsize);
 }
 
 p{

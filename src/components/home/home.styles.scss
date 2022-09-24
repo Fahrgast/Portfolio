@@ -1,6 +1,18 @@
+@use "../../utils/index" as utils;
+
 .home-container{
+    width: 80%;
+    margin: auto;
     margin-top: 5rem;
     z-index: -4;
     position: relative;
+
+    .break{
+        display: inline;
+    }
+
+    .text{
+        margin-top: 2rem;
+    }
 
 }

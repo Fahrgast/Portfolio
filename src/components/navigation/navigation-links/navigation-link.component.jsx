@@ -1,7 +1,7 @@
 import "./navigation-link.styles.scss";
 
 import { NavLink } from "react-router-dom";
-import navLinkBubble from "../../../assets/navbar/navlink-bubble-mobile.png";
+import navLinkBubble from "../../../assets/shared/navbar/navlink-bubble-mobile.png";
 
 const NavigationLink = ({ name }) => {
   return (

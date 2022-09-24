@@ -1,0 +1,79 @@
+@use "../../utils/index" as utils;
+
+.background-container{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+    z-index: -55;
+
+    .background-top-right{
+        position: fixed;
+        width: 350px;
+
+        right: -2rem;
+        top: 4rem;
+        filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    .background-bottom-right{
+        position: fixed;
+        width: 350px;
+        height: 200px;
+
+        bottom: -2rem;
+        right: -2rem;
+        filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    .background-middle-left{
+        position: fixed;
+        width: 60px;
+
+        left: 0;
+        bottom: 6rem;
+        filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    @include utils.breakpoint(medium){
+        .background-top-right{
+            width: 600px;
+            right: 0;
+            top: 10rem;
+
+            content: url("../../assets/shared/background/background-right-top-green.png");
+        }
+
+    
+        .background-bottom-right{
+            content: url("../../assets/shared/background/background-right-bottom-blue.png");
+            width: 450px;
+
+        }
+    
+        .background-middle-left{
+            content: url("../../assets/shared/background/background-left-middle-blue.png");
+            width: 80px;
+        }
+    }
+
+    @include utils.breakpoint(large){
+        .background-top-right{
+            width: 800px;
+            right: 0;
+            top: 8rem;
+
+            transform: rotate(10deg);
+        }
+    
+        .background-bottom-right{
+
+            width: 450px;
+
+        }
+    
+        .background-middle-left{
+            width: 80px;
+        }
+    }
+}

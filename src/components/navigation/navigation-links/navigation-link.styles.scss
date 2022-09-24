@@ -1,3 +1,4 @@
+@use "../../../utils/index" as utils;
 
 .navlink-container{
     display: none;
@@ -18,13 +19,14 @@
 
     .navlink-bubble{
         align-self: center;
-        z-index: -1;
+        z-index: var(--z-nav-link-bubble);
         right: 1.3rem;
         width: 150px;
 
         filter: drop-shadow( 5px 5px 4px rgba(0, 0, 0, 0.25));
    }
 
+   /* Animation for navlink Bubbles */
     .pop-in{
         animation: 1s  popIn;
         animation-timing-function: linear;
@@ -46,6 +48,29 @@
             100% {transform: scale(0);}
           }
     }
-
-
 }
+
+/* Medium width screens */
+@include utils.breakpoint(medium){
+    .navlink-container{
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+
+        .navlink-bubble{
+            width: 175px;
+        }
+    }
+}
+
+
+/* Large width screens */
+@include utils.breakpoint(large){
+    .navlink-container{
+        
+        .navlink-bubble{
+            width: 200px;
+        }
+    }
+}
+

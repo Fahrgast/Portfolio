@@ -1,0 +1,10 @@
+:root{
+    --z-background-bubbles: -5;
+    --z-text: -4;
+    --z-overlay: -3;
+    --z-mobile-nav-background-bubble: -2;
+    --z-logo-bubble: -1;
+    --z-nav-link-bubble: -1;
+    --z-nav-text: 0;
+}
+

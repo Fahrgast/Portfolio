@@ -1,10 +1,10 @@
 import "./navigation.styles.scss";
 
-import hamburger from "../../assets/shared/icon-hamburger.svg";
-import closeIcon from "../../assets/shared/icon-close.svg";
-import logoBubble from "../../assets/navbar/logo-bubble-mobile.png";
-import logo from "../../assets/navbar/Logo.png";
-import toggleBubble from "../../assets/navbar/navbar-toggle-bubble.png";
+import hamburger from "../../assets/shared/navbar/icon-hamburger.svg";
+import closeIcon from "../../assets/shared/navbar/icon-close.svg";
+import logoBubble from "../../assets/shared/navbar/logo-bubble.png";
+import logo from "../../assets/shared/navbar/Logo.png";
+import toggleBubble from "../../assets/shared/navbar/navbar-toggle-bubble.png";
 
 import { useState } from "react";
 
@@ -12,10 +12,12 @@ import { NavLink } from "react-router-dom";
 import NavigationLink from "./navigation-links/navigation-link.component";
 
 const Navigation = () => {
+  // Keeping track of the mobile navbar status
   const [navbarToggled, toggleNavbar] = useState(false);
 
   const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
+  // Handling Navbar expand / hide for after hamburger got clicked
   const handleNavToggle = () => {
     const navLinksContainer = document.querySelector(".nav-links-container");
     const navLinkStyle = getComputedStyle(navLinksContainer);
@@ -34,6 +36,7 @@ const Navigation = () => {
     handleNavLinkPop();
   };
 
+  // handle the display of the mobile navlinks and their bubbles
   const handleNavLinkPop = () => {
     const navigationContentContainer = document.querySelector(
       ".navigation-content-container"
@@ -45,12 +48,14 @@ const Navigation = () => {
 
     const overlay = document.querySelector(".overlay");
 
+    // When nav gets toggled -> show mobile navbar - else hide it
     if (navLinksContainerStyle.display === "none") {
       popIn();
     } else {
       popOut();
     }
 
+    // Pop in Animation of the Navlinks on mobile
     async function popIn() {
       navLinksContainer.style.display = "flex";
       navigationContentContainer.classList.add("toggled");
@@ -64,6 +69,7 @@ const Navigation = () => {
       }
     }
 
+    // Pop Out Animation of the Navlinks on mobile
     async function popOut() {
       for (var i = 0; i < 3; i++) {
         navItemBubble[i].classList.remove("pop-in");
