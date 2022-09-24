@@ -1,11 +1,11 @@
 @use "../../utils/index" as utils;
 
 .background-container{
-    position: fixed;
+    position: relative;
     height: 100%;
     width: 100%;
 
-    z-index: -55;
+    z-index: var(--z-background-bubbles);
 
     .background-top-right{
         position: fixed;
@@ -44,11 +44,9 @@
             content: url("../../assets/shared/background/background-right-top-green.png");
         }
 
-    
         .background-bottom-right{
             content: url("../../assets/shared/background/background-right-bottom-blue.png");
             width: 450px;
-
         }
     
         .background-middle-left{
@@ -60,20 +58,40 @@
     @include utils.breakpoint(large){
         .background-top-right{
             width: 800px;
+            height: 500px;
             right: 0;
-            top: 8rem;
+            top: 7rem;
 
-            transform: rotate(10deg);
+            transform: rotate(8deg);
         }
     
         .background-bottom-right{
-
             width: 450px;
-
         }
     
         .background-middle-left{
             width: 80px;
+        }
+    }
+    
+    @include utils.breakpoint(xLarge){
+        .background-top-right{
+            width: 1200px;
+            height: 600px;
+            right: 0;
+            top: 5rem;
+
+            transform: rotate(5deg);
+        }
+    
+        .background-bottom-right{
+            width: 550px;
+            height: 350px;
+        }
+    
+        .background-middle-left{
+            width: 100px;
+
         }
     }
 }

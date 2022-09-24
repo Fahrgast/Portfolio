@@ -2,17 +2,87 @@
 
 .home-container{
     width: 80%;
+    height: 100%;
     margin: auto;
     margin-top: 5rem;
     z-index: -4;
     position: relative;
+    display: flex;
+    flex-direction: column;
 
-    .break{
-        display: inline;
+    .hello{
+        font-weight: 400;
+    }
+
+    .home-subheading{
+        font-size: var(--heading-three-fontsize);
     }
 
     .text{
         margin-top: 2rem;
+        font-size: var(--text-fontsize);
     }
 
+    .image-bubble{
+        display: none;
+    }
+
+    .me{
+        display: none;
+    }
+
+    /* Medium Screen width */
+    @include utils.breakpoint(medium){
+        
+        .home-text-container{
+            padding-top: 5rem;
+        }
+
+        .home-subheading{
+            font-size: var(--heading-two-fontsize);
+        }
+    }
+
+    @include utils.breakpoint(large){
+        flex-direction: row;
+        justify-content: space-between;
+
+        .home-text-container{
+            width: 65%;
+            padding-top: 10rem;
+        }
+        
+        .image-bubble{
+            display: block;
+            content: url(../../assets/shared/background/background-right-bottom-blue.png);
+            position: fixed;
+            bottom: -2rem;
+            right: -2rem;
+            width: 450px;
+            height: 200px;
+            z-index: 1;
+
+            filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
+            opacity: 90%;
+        }
+
+        .me{
+            display: block;
+            content: url(../../assets/Me.png);
+            width: 30%;
+            max-width: 300px;
+            max-height: 800px;
+            position: relative;
+        }
+    }
+    @include utils.breakpoint(xLarge){
+        .home-text-container{
+            width: 55%;
+        }
+        
+        .image-bubble{
+            width: 550px;
+            height: 350px;
+        }
+    }
 }
