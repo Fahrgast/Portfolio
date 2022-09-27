@@ -50,11 +50,11 @@
         flex-direction: row;
         justify-content: space-between;
         margin-top: 5;
-        margin-bottom: 0;
+ 
 
         .home-text-container{
             width: 65%;
-            padding-top: 7rem;
+            padding-top: 5rem;
         }
         
         .image-bubble{
@@ -81,6 +81,7 @@
         }
     }
     @include utils.breakpoint(xLarge){
+        margin-bottom: 0;
         .home-text-container{
             width: 55%;
         }

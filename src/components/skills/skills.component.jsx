@@ -39,7 +39,7 @@ const Skills = () => {
 
   return (
     <div className="skills-container">
-      <h2>Skills</h2>
+      <h2 className="section-heading">Skills</h2>
       <div className="skills-content-container">
         {skills.map((skill, iteration) => (
           <SkillItem data={skill} key={`${skill} ${iteration}`} />
