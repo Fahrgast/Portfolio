@@ -2,7 +2,7 @@
     --heading-fontsize: clamp(60px, 11vw, 100px);
     --heading-two-fontsize: clamp(25px, 6vw, 50px);
     --heading-three-fontsize: clamp(20px, 4vw, 30px);
-    --heading-four-fontsize: clamp(20px, 3vw, 25px);
+    --heading-four-fontsize: clamp(17px, 3vw, 25px);
     --text-fontsize: clamp(16px, 2vw, 18px);;
 
     --heading-spacing: 5px;

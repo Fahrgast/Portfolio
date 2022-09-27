@@ -1,11 +1,53 @@
+@use "../../utils/index" as utils;
+
 .projects-container{
     width: 80%;
     margin: auto;
     margin-top: 3rem;
-
-
+    margin-bottom: 10rem;
+    
     .project-container{
         display: grid;
-       
+        
+        @include utils.breakpoint(xLarge){
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+    }
+
+    .see-all-button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .see-all-bubble{
+            width: 75%;
+            margin-left: 1rem;
+            filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
+
+            @include utils.breakpoint(medium){
+                margin-left: 2rem;
+                content: url("../../assets/projects/see-all-bubble.png")
+            }
+
+            @include utils.breakpoint(large){
+                width: 60%;
+            }
+
+            @include utils.breakpoint(xLarge){
+                width: 50%;
+            }
+
+            @include utils.breakpoint(gigaLarge){
+                width: 35%;
+            }
+        }
+
+        .see-all-link{
+            position: absolute;
+            font-size: var(--heading-three-fontsize);
+        }
     }
 }

@@ -1,9 +1,15 @@
 .project-item-container{
     margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
     background-color: var(--blue);
     text-align: center;
     padding: 1rem;
+    padding-bottom: 2rem;
+    border-radius: 10px;
+    filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
+
+    .project-title{
+        color: var(--white);
+    }
 
     .project-buttons{
         display: flex;
@@ -17,7 +23,7 @@
 
             .project-button-bubble{               
                 filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
-                width: 70%;
+                width: 80%;
             }
 
             .code-bubble{
@@ -28,7 +34,7 @@
             .button-link{
                 position: absolute;
                 top: 30%;
-                left: 40%;
+                left: 32%;
     
                 font-size: var(--heading-four-fontsize);
             }
@@ -44,5 +50,6 @@
     .project-image{
         width: 100%;
         border-radius: 10px;
+        filter: drop-shadow( 5px 5px 4px rgba(0, 0, 0, 0.25));
     }
 }

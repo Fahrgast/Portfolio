@@ -4,6 +4,9 @@ import ProjectItem from "./project-item/project-item.component";
 import projectImageOne from "../../assets/projects/Screenshot_space.png";
 import projectImageTwo from "../../assets/projects/Screenshot_joblisting.png";
 import projectImageThree from "../../assets/projects/Screenshot_bookmark.png";
+import projectImageFour from "../../assets/projects/Screenshot_loopstudios.png";
+
+import seeAllBubble from "../../assets/projects/see-all-bubble-blue.png";
 
 const Projects = () => {
   const projects = [
@@ -31,6 +34,14 @@ const Projects = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa tempore non saepe ad sequi eius quis in quisquam cum at unde animi nam, labore sed debitis velit dolore aliquid!",
     },
+    {
+      imageSrc: projectImageFour,
+      siteUrl: "https://fahrgast.github.io/Loopstudios/",
+      repository: "https://github.com/Fahrgast/Loopstudios",
+      title: "Loopstudious Landing Page",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa tempore non saepe ad sequi eius quis in quisquam cum at unde animi nam, labore sed debitis velit dolore aliquid!",
+    },
   ];
 
   return (
@@ -41,7 +52,17 @@ const Projects = () => {
           <ProjectItem data={project} key={iteration} />
         ))}
       </div>
-      <button>Load more all Projects Or all</button>
+      <div className="see-all-button">
+        <img src={seeAllBubble} className="see-all-bubble" alt="background" />
+        <a
+          href="https://github.com/Fahrgast"
+          className="see-all-link"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          See all Projects
+        </a>
+      </div>
     </div>
   );
 };

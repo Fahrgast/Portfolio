@@ -1,11 +1,13 @@
 $width-medium: 768px;
 $width-large: 992px;
 $width-xLarge: 1400px;
+$width-gigaLarge: 2000px;
 
 :export {
     widthMedium: $width-medium;
     widthLarge: $width-large;
     widthXLarge: $width-xLarge;
+    widthGigaLarge: $width-gigaLarge;
   }
 
 $breakpoints-up: (
@@ -16,6 +18,7 @@ $breakpoints-up: (
     "large": #{$width-large},
     //1400px
     "xLarge": #{$width-xLarge},
+    "gigaLarge": #{$width-gigaLarge}
 );
 
 /* 
