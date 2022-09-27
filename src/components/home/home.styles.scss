@@ -5,6 +5,8 @@
     height: 100%;
     margin: auto;
     margin-top: 5rem;
+    margin-bottom: 3rem;
+
     z-index: -4;
     position: relative;
     display: flex;
@@ -33,6 +35,7 @@
 
     /* Medium Screen width */
     @include utils.breakpoint(medium){
+        margin-top: 0;
         
         .home-text-container{
             padding-top: 5rem;
@@ -46,10 +49,12 @@
     @include utils.breakpoint(large){
         flex-direction: row;
         justify-content: space-between;
+        margin-top: 5;
+        margin-bottom: 0;
 
         .home-text-container{
             width: 65%;
-            padding-top: 10rem;
+            padding-top: 7rem;
         }
         
         .image-bubble{
