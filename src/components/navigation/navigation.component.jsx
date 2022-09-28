@@ -44,7 +44,7 @@ const Navigation = () => {
     const navLinksContainer = document.querySelector(".nav-links-container");
     const navLinkContainer = document.querySelectorAll(".navlink-container");
     const navLinksContainerStyle = getComputedStyle(navLinksContainer);
-    const navItemBubble = document.querySelectorAll(".navlink-bubble");
+    const navItemBubble = document.querySelectorAll(".svg-link-bubble");
 
     const overlay = document.querySelector(".overlay");
 
@@ -62,7 +62,7 @@ const Navigation = () => {
       overlay.classList.add("overlay-toggled");
 
       for (var i = 0; i < 3; i++) {
-        await timer(500);
+        await timer(600);
         navItemBubble[i].classList.remove("pop-out");
         navItemBubble[i].classList.add("pop-in");
         navLinkContainer[i].style.display = "flex";
@@ -102,9 +102,9 @@ const Navigation = () => {
           />
           <img src={toggleBubble} alt="" className="nav-toggle-bubble" />
           <div className="nav-links-container">
-            <NavigationLink name="Home" />
-            <NavigationLink name="About Me" />
-            <NavigationLink name="Projects" />
+            <NavigationLink name="Home" index={0} />
+            <NavigationLink name="About Me" index={1} />
+            <NavigationLink name="Projects" index={2} />
           </div>
         </div>
       </div>
