@@ -8,13 +8,13 @@ import bubblePaths from "../../../assets/shared/background/paths/bubble-paths.js
 
 const NavigationLink = ({ name, index }) => {
   useEffect(() => {
-    makeBubbleFluid(index, 15, 0.003, 0, "navlink-container");
+    makeBubbleFluid(index, 15, 0.003, 0, [`navlink-container-${index}`]);
   });
 
   const navLinkBubblePath = bubblePaths.navlinkBubble;
 
   return (
-    <div className="navlink-container">
+    <div className="navlink-container" id={`navlink-container-${index}`}>
       <div className="nav-text-container">
         <NavLink className="nav-link"> {name}</NavLink>
       </div>

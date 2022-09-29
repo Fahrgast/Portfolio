@@ -12,6 +12,7 @@ function makeBubbleFluid(
   mouseover
 ) {
   var pathSelect = document.querySelectorAll(`#bubble-path-${index}`);
+
   if (!(pathSelect.length === 0)) {
     const path = pathSelect[0];
     let hueNoiseOffset = noiseOffset;
@@ -87,17 +88,21 @@ function makeBubbleFluid(
     }
 
     if (mouseover) {
-      document
-        .querySelectorAll(`.${mouseover}`)
-        [index].addEventListener("mouseover", () => {
-          noiseStep = 0.01;
-        });
+      mouseover.forEach((element) => {
+        document
+          .querySelector(`#${element}`)
+          .addEventListener("mouseover", () => {
+            noiseStep = 0.01;
+          });
+      });
 
-      document
-        .querySelectorAll(`.${mouseover}`)
-        [index].addEventListener("mouseleave", () => {
-          noiseStep = 0.003;
-        });
+      mouseover.forEach((element) => {
+        document
+          .querySelector(`#${element}`)
+          .addEventListener("mouseleave", () => {
+            noiseStep = noiseSteps;
+          });
+      });
     }
   }
 }

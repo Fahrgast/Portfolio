@@ -17,19 +17,29 @@
 
     .see-all-button{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         position: relative;
 
+        .bubs{
+            z-index: 5;
+            fill: yellow;
+            width: 100%;
+            
+        }
+
         .see-all-bubble{
-            width: 75%;
-            margin-left: 1rem;
+            position: absolute;
+            overflow: visible;
+            bottom:  0;
+            fill: yellow;
+                 margin-left: 1rem;
             filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
 
             @include utils.breakpoint(medium){
                 margin-left: 2rem;
-                content: url("../../assets/projects/see-all-bubble.png")
+                
             }
 
             @include utils.breakpoint(large){

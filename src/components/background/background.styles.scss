@@ -9,8 +9,8 @@
 
     .background-top-right{
         position: fixed;
-        right: -2.5rem !important;
-        top: 5rem !important;
+        right: -2.5rem;
+        top: 5rem;
         fill: var(--blue);
         overflow: visible;
            
@@ -82,25 +82,22 @@
             width: 150%;
         }
     }
-    
+
     @include utils.breakpoint(xLarge){
         .background-top-right{
-            width: 1200px;
-            height: 600px;
-            right: 0;
-            top: 5rem;
+            width: 60%;
+            top: 0;
 
-            transform: rotate(5deg);
+            transform: rotate(8deg) scaleX(1.2) scaleY(0.7);
         }
     
         .background-bottom-right{
-            width: 550px;
-            height: 350px;
+            width: 20%;
+            bottom: 0;
         }
     
         .background-middle-left{
-            width: 100px;
-
+            width: 125%;
         }
     }
 }

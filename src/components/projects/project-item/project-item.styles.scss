@@ -1,3 +1,5 @@
+@use "../../../utils/index" as utils;
+
 .project-item-container{
     margin-bottom: 1.5rem;
     background-color: var(--blue);
@@ -15,19 +17,26 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: center;
         margin-top: 1rem;
+        gap: 1rem;
 
-        .link-button{
+        .link-button {
             position: relative;
+            width: 40%;
 
             .project-button-bubble{               
                 filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
-                width: 80%;
+                width: 100%;
+
+                fill: var(--green);
+
+                transition: all 0.75s;
+                transform-origin: 50% 50%;
             }
 
             .project-button-bubble:hover{
-                
+                transform: scale(1.2); 
             }
 
             .code-bubble{
@@ -35,20 +44,77 @@
                 filter: drop-shadow( -10px 10px 4px rgba(0, 0, 0, 0.25));
             }
 
+            .code-bubble:hover{
+                transform: scale(1.2) rotateY(180deg);
+            }
+
+   
             .button-link{
                 position: absolute;
                 top: 30%;
-                left: 32%;
+                left: 30%;
+                z-index: 1;
     
                 font-size: var(--heading-four-fontsize);
             }
 
+            .button-link:hover ~ .site-bubble{
+                transform: scale(1.2); 
+            }
+
+            .button-link:hover ~ .code-bubble{
+                transform: scale(1.2) rotateY(180deg); 
+            }
+
             .code-link{
-                left: 30%;
+                left: 25%;
+            }
+
+        }
+
+        .link-button:hover ~ .project-button-bubble{
+            transform: scale(1.2);
+        }
+
+        @include utils.breakpoint(medium){
+            .link-button {
+            
+                .project-button-bubble{
+                    width: 75%;
+                }
+
+                .button-link{
+                    left: 35%;
+                }
             }
         }
 
+        @include utils.breakpoint(large){
+            .link-button {
+            
+                .project-button-bubble{
+                    width: 65%;
+                }
+            }
+        }
 
+        @include utils.breakpoint(xLarge){
+            .link-button {
+            
+                .project-button-bubble{
+                    width: 75%;
+                }
+            }
+        }
+
+        @include utils.breakpoint(gigaLarge){
+            .link-button {
+            
+                .project-button-bubble{
+                    width: 70%;
+                }
+            }
+        }
     }
 
     .project-image{
