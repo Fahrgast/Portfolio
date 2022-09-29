@@ -4,17 +4,22 @@ import {
 } from "https://cdn.skypack.dev/@georgedoescode/generative-utils@1.0.1";
 import SimplexNoise from "https://cdn.skypack.dev/simplex-noise@2.4.0";
 
-function makeBubbleFluid(index, mouseover) {
+function makeBubbleFluid(
+  index,
+  pathPoints = 15,
+  noiseSteps = 0.003,
+  noiseOffset = 0,
+  mouseover
+) {
   var pathSelect = document.querySelectorAll(`#bubble-path-${index}`);
-
   if (!(pathSelect.length === 0)) {
     const path = pathSelect[0];
-    let hueNoiseOffset = 0;
-    let noiseStep = 0.003;
+    let hueNoiseOffset = noiseOffset;
+    let noiseStep = noiseSteps;
 
     const simplex = new SimplexNoise();
 
-    const svgPoints = pointsInPath(path, 15);
+    const svgPoints = pointsInPath(path, pathPoints);
     const points = createPoints();
 
     function createPoints() {
@@ -81,17 +86,19 @@ function makeBubbleFluid(index, mouseover) {
       return simplex.noise2D(x, y);
     }
 
-    document
-      .querySelectorAll(`.${mouseover}`)
-      [index].addEventListener("mouseover", () => {
-        noiseStep = 0.01;
-      });
+    if (mouseover) {
+      document
+        .querySelectorAll(`.${mouseover}`)
+        [index].addEventListener("mouseover", () => {
+          noiseStep = 0.01;
+        });
 
-    document
-      .querySelectorAll(`.${mouseover}`)
-      [index].addEventListener("mouseleave", () => {
-        noiseStep = 0.003;
-      });
+      document
+        .querySelectorAll(`.${mouseover}`)
+        [index].addEventListener("mouseleave", () => {
+          noiseStep = 0.003;
+        });
+    }
   }
 }
 

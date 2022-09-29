@@ -4,10 +4,14 @@ import makeBubbleFluid from "../../bubble/bubble.js";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 
+import bubblePaths from "../../../assets/shared/background/paths/bubble-paths.json";
+
 const NavigationLink = ({ name, index }) => {
   useEffect(() => {
-    makeBubbleFluid(index, "navlink-container");
+    makeBubbleFluid(index, 15, 0.003, 0, "navlink-container");
   });
+
+  const navLinkBubblePath = bubblePaths.navlinkBubble;
 
   return (
     <div className="navlink-container">
@@ -23,12 +27,7 @@ const NavigationLink = ({ name, index }) => {
         className="svg-link-bubble"
       >
         <g transform="translate(0.000000,54.000000) scale(0.100000,-0.100000)">
-          <path
-            id={`bubble-path-${index}`}
-            d="M240 523 c-222 -23 -269 -73 -179 -189 149 -194 532 -341 833 -320
-          176 12 306 108 306 226 0 74 -89 194 -178 239 -85 43 -148 50 -462 48 -162 -1
-          -306 -3 -320 -4z"
-          />
+          <path id={`bubble-path-${index}`} d={navLinkBubblePath} />
         </g>
       </svg>
     </div>

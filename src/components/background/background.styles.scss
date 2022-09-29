@@ -9,17 +9,22 @@
 
     .background-top-right{
         position: fixed;
-        width: 350px;
-
-        right: -2rem;
-        top: 4rem;
+        right: -2.5rem !important;
+        top: 5rem !important;
+        fill: var(--blue);
+        overflow: visible;
+           
         filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
+
+        width: 90%;
     }
 
     .background-bottom-right{
         position: fixed;
-        width: 350px;
-        height: 200px;
+        width: 80%;
+        overflow: visible;
+
+        fill: var(--green);
 
         bottom: -2rem;
         right: -2rem;
@@ -28,49 +33,53 @@
 
     .background-middle-left{
         position: fixed;
-        width: 60px;
+        overflow: visible;
 
-        left: 0;
-        bottom: 6rem;
+        fill: var(--green);
+
+        left: 1rem;
+        top:  70%;
+        width: 200%;
+
         filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
+    
     }
 
     @include utils.breakpoint(medium){
         .background-top-right{
-            width: 600px;
             right: 0;
             top: 10rem;
 
-            content: url("../../assets/shared/background/background-right-top-green.png");
+            fill:var(--green);
+            width: 75%;
+   
         }
 
         .background-bottom-right{
-            content: url("../../assets/shared/background/background-right-bottom-blue.png");
-            width: 450px;
+            fill:var(--blue);
+            width: 40%;
+            right: 5%;
         }
     
         .background-middle-left{
-            content: url("../../assets/shared/background/background-left-middle-blue.png");
-            width: 80px;
+            fill:var(--blue);   
+            
         }
     }
 
     @include utils.breakpoint(large){
         .background-top-right{
-            width: 800px;
-            height: 500px;
-            right: 0;
-            top: 7rem;
+            width: 60%;
 
             transform: rotate(8deg);
         }
     
         .background-bottom-right{
-            width: 450px;
+            width: 30%;
         }
     
         .background-middle-left{
-            width: 80px;
+            width: 150%;
         }
     }
     
