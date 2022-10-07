@@ -7,6 +7,10 @@ import Projects from "./components/projects/projects.component";
 import About from "./components/about-me/about-me.component";
 import Skills from "./components/skills/skills.component";
 
+/* 
+  TODO: background bottom right fix
+*/
+
 const App = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>

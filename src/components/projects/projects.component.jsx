@@ -6,9 +6,15 @@ import projectImageTwo from "../../assets/projects/Screenshot_joblisting.png";
 import projectImageThree from "../../assets/projects/Screenshot_bookmark.png";
 import projectImageFour from "../../assets/projects/Screenshot_loopstudios.png";
 
-import seeAllBubble from "../../assets/projects/see-all-bubble-blue.png";
+import seeAllPath from "../../assets/shared/background/paths/bubble-paths.json";
+
+import { useEffect } from "react";
+
+import makeBubbleFluid from "../bubble/bubble";
 
 const Projects = () => {
+  const bubbleButtonPath = seeAllPath.navlinkBubble;
+
   const projects = [
     {
       imageSrc: projectImageOne,
@@ -45,9 +51,10 @@ const Projects = () => {
   ];
 
   var counter = 100;
-  const seeAllBubblePath = seeAllBubble.seeAll;
 
-  /* TODO Fix "See all Projects" Bubble */
+  useEffect(() => {
+    makeBubbleFluid(1337, 15, 0.003, 0, ["see-all-link", "see-all-bubble"]);
+  });
 
   return (
     <div className="projects-container">
@@ -61,22 +68,22 @@ const Projects = () => {
       <div className="see-all-button">
         <a
           href="https://github.com/Fahrgast"
-          className="bubs"
+          className="see-all-link"
           target="_blank"
           rel="noreferrer noopener"
+          id="see-all-link"
         >
           See all Projects
         </a>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
           viewBox="0 0 121.000000 54.000000"
           preserveAspectRatio="xMidYMid meet"
-          className="bubs"
+          className="see-all-bubble"
+          id="see-all-bubble"
         >
-          <g transform="translate(-22.75582,-97.986109)">
-            <path d={seeAllBubblePath} />
+          <g transform="translate(0.000000,54.000000) scale(0.100000,-0.100000)">
+            <path id="bubble-path-1337" d={bubbleButtonPath} />
           </g>
         </svg>
       </div>

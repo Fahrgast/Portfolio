@@ -5,6 +5,7 @@
     margin: auto;
     margin-top: 3rem;
     margin-bottom: 10rem;
+    position: relative;
     
     .project-container{
         display: grid;
@@ -17,47 +18,62 @@
 
     .see-all-button{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         position: relative;
-
-        .bubs{
-            z-index: 5;
-            fill: yellow;
-            width: 100%;
-            
-        }
+        margin-top: 1rem;
 
         .see-all-bubble{
+            margin-left: 1rem;
             position: absolute;
-            overflow: visible;
-            bottom:  0;
-            fill: yellow;
-                 margin-left: 1rem;
-            filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
+            width: 65%;
+            transform: scaleY(0.8) rotateY(180deg);
+            fill: var(--blue);
+            transition: all 0.60s;
+
+            filter: drop-shadow( -10px 10px 4px rgba(0, 0, 0, 0.25));
 
             @include utils.breakpoint(medium){
-                margin-left: 2rem;
+                fill: var(--green);
+                width: 45%;
                 
             }
 
             @include utils.breakpoint(large){
-                width: 60%;
-            }
-
-            @include utils.breakpoint(xLarge){
+                transform: scaleY(0.7) rotateY(180deg);
                 width: 50%;
             }
 
+            @include utils.breakpoint(xLarge){
+                width: 32%;
+            }
+
             @include utils.breakpoint(gigaLarge){
-                width: 35%;
+                width: 20%;
+            }
+        }
+
+        @include utils.breakpoint(medium){
+            padding-top: 2rem;
+        }
+
+        .see-all-bubble:hover{
+            transform: scaleY(0.9) scaleX(1.1) rotateY(180deg);
+
+            @include utils.breakpoint(large){
+                transform: scaleY(0.8) scaleX(1) rotateY(180deg);
             }
         }
 
         .see-all-link{
-            position: absolute;
             font-size: var(--heading-three-fontsize);
+            position: relative;
+            z-index: 1;
+        }
+
+        .see-all-link:hover ~ .see-all-bubble{
+            transform: scaleY(1) scaleX(1.2) rotateY(180deg);
         }
     }
 }

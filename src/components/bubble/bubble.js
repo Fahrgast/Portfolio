@@ -4,6 +4,20 @@ import {
 } from "https://cdn.skypack.dev/@georgedoescode/generative-utils@1.0.1";
 import SimplexNoise from "https://cdn.skypack.dev/simplex-noise@2.4.0";
 
+/*
+  This Function create a bubble effect by making an svg path "wiggle"
+
+  input: 
+    element must have an id of "bubble-path-x" where x is passed in as the index
+
+    index - an index value which is part of a numbered id path of all bubbles
+    pathPoints = 15 - how many "wiggle" points should be in the path,
+    noiseSteps = 0.003 - speed of the wiggle,
+    noiseOffset = 0 - how far can each pathPoint move away from its origin,
+    mouseover - array of all classnames that should get a faster wiggle on
+                mouseover
+*/
+
 function makeBubbleFluid(
   index,
   pathPoints = 15,
@@ -15,7 +29,6 @@ function makeBubbleFluid(
 
   if (!(pathSelect.length === 0)) {
     const path = pathSelect[0];
-    let hueNoiseOffset = noiseOffset;
     let noiseStep = noiseSteps;
 
     const simplex = new SimplexNoise();
@@ -70,11 +83,6 @@ function makeBubbleFluid(
         point.noiseOffsetX += noiseStep;
         point.noiseOffsetY += noiseStep;
       }
-
-      const hueNoise = noise(hueNoiseOffset, hueNoiseOffset);
-      const hue = map(hueNoise, -1, 1, 0, 360);
-
-      hueNoiseOffset += noiseStep / 6;
 
       requestAnimationFrame(animate);
     })();
