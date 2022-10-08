@@ -1,0 +1,52 @@
+.space-maker{
+    height: 500px;
+    width: 500px;
+}
+
+.hired-container{
+    .background-top-right{
+        
+
+        @keyframes growBig {
+            0% {
+            }
+        
+            100%{
+                transform: scale(5);
+            }
+        } 
+    }
+
+    .background-middle-left{
+        animation: 2s moveToMiddle ;
+
+        @keyframes moveToMiddle {
+            0% {
+            }
+        
+            100%{
+                top: 50%;
+                left: 45%;
+            }
+        } 
+    }
+
+    
+    .background-bottom-right{
+        animation: 2s moveToMiddle infinite;
+        
+
+        @keyframes moveToMiddle {
+            0% {
+                
+            }
+        
+            100%{
+                bottom: 50%;
+                right: 45%;
+            }
+        } 
+    }
+    
+}
+

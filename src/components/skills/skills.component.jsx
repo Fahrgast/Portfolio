@@ -38,7 +38,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="skills-container">
+    <div className="skills-container" id="skills-container">
       <h2 className="section-heading">Skills</h2>
       <div className="skills-content-container">
         {skills.map((skill, iteration) => (

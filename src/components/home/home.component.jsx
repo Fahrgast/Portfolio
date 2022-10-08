@@ -13,7 +13,7 @@ const Home = () => {
   });
 
   return (
-    <div className="home-container">
+    <div className="home-container" id="home-container">
       <div className="home-text-container">
         <h3 className="hello">Hi, my name is</h3>
         <h1 className="name">Felix Argast.</h1>

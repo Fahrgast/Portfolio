@@ -65,7 +65,7 @@ const Navigation = () => {
       navigationContentContainer.classList.add("toggled");
       overlay.classList.add("overlay-toggled");
 
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < 4; i++) {
         await timer(600);
         navItemBubble[i].classList.remove("pop-out");
         navItemBubble[i].classList.add("pop-in");
@@ -75,7 +75,7 @@ const Navigation = () => {
 
     // Pop Out Animation of the Navlinks on mobile
     async function popOut() {
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < 4; i++) {
         navItemBubble[i].classList.remove("pop-in");
         navItemBubble[i].classList.add("pop-out");
       }
@@ -83,6 +83,7 @@ const Navigation = () => {
       navLinkContainer[0].style.display = "none";
       navLinkContainer[1].style.display = "none";
       navLinkContainer[2].style.display = "none";
+      navLinkContainer[3].style.display = "none";
 
       navLinksContainer.style.display = "none";
       navigationContentContainer.classList.remove("toggled");
@@ -108,8 +109,8 @@ const Navigation = () => {
 
   return (
     <div className="wrapper">
-      <div className="navigation-container">
-        <NavLink className="logo-container">
+      <div className="navigation-container" id="navigation-container">
+        <NavLink className="logo-container" to="/">
           <img src={logo} alt="logo" className="logo" />
           <svg
             viewBox="0 0 438.92892 295.93677"
@@ -130,9 +131,26 @@ const Navigation = () => {
           />
           <img src={toggleBubble} alt="" className="nav-toggle-bubble" />
           <div className="nav-links-container">
-            <NavigationLink name="Home" index={0} />
-            <NavigationLink name="About Me" index={1} />
-            <NavigationLink name="Projects" index={2} />
+            <NavigationLink
+              name="About Me"
+              targetId="about-container"
+              index={0}
+            />
+            <NavigationLink
+              name="Skills"
+              targetId="skills-container"
+              index={1}
+            />
+            <NavigationLink
+              name="Projects"
+              targetId="projects-container"
+              index={2}
+            />
+            <NavigationLink
+              name="Contact Me"
+              targetId="hired-container"
+              index={3}
+            />
           </div>
         </div>
       </div>

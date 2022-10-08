@@ -2,7 +2,7 @@ import "./about-me.styles.scss";
 
 const About = () => {
   return (
-    <div className="about-container">
+    <div className="about-container" id="about-container">
       <h2>About Me</h2>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero dolore

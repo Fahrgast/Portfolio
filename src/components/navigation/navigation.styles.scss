@@ -56,22 +56,26 @@
 
         /* Animation for mobile Navbar sliding in */
         .toggle-slide-in{
-            animation: 1.5s  slideIn;
+            animation: 1.7s  slideIn;
             animation-timing-function: linear;
-            height: 300px;
+            height: 400px;
+            width: 350px;
 
             @keyframes slideIn {
                 0% {
                   height: 0;
+                  width: 0;
                 }
               
                 50% {
-                    height: 300px;
+                    height: 400px;
+                    width: 350px;
                     transform: scale(1);
                 }
 
                 55%{
-                    height: 300px;
+                    height: 400px;
+                    width: 350px;
                     transform: scale(1);
                 }
 
@@ -94,7 +98,7 @@
             @keyframes slideOut {
                 0%{
                     transform: scale(1);
-                    height: 300px;
+                    height: 120%;
                 }
                 50%{
                     transform: scale(1.5);
@@ -104,7 +108,7 @@
                 }
                 95%{
                     transform: scale(2.2);
-                    height: 300px;
+                    height: 120%;
                 }
                 100%{
                     transform: scale(0);

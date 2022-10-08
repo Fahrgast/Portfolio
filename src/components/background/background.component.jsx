@@ -10,7 +10,7 @@ const Background = () => {
   const middleLeftPath = bubblePaths.backgroundMiddleLeft;
 
   useEffect(() => {
-    makeBubbleFluid(4, 10, 0.00075, 10);
+    makeBubbleFluid(4, 10, 0.0005, 10);
     makeBubbleFluid(5, 10, 0.0003, 10);
     makeBubbleFluid(6, 7, 0.0003, 10);
   });

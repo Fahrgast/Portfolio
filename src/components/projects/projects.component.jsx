@@ -57,7 +57,7 @@ const Projects = () => {
   });
 
   return (
-    <div className="projects-container">
+    <div className="projects-container" id="projects-container">
       <h2>Featured Projects</h2>
       <div className="project-container">
         {projects.map((project, iteration) => {

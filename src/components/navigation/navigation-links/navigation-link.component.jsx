@@ -1,12 +1,12 @@
 import "./navigation-link.styles.scss";
 
 import makeBubbleFluid from "../../bubble/bubble.js";
-import { NavLink } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { useEffect } from "react";
 
 import bubblePaths from "../../../assets/shared/background/paths/bubble-paths.json";
 
-const NavigationLink = ({ name, index }) => {
+const NavigationLink = ({ name, targetId, index }) => {
   useEffect(() => {
     makeBubbleFluid(index, 15, 0.003, 0, [`navlink-container-${index}`]);
   });
@@ -16,7 +16,15 @@ const NavigationLink = ({ name, index }) => {
   return (
     <div className="navlink-container" id={`navlink-container-${index}`}>
       <div className="nav-text-container">
-        <NavLink className="nav-link"> {name}</NavLink>
+        <Link
+          className="nav-link"
+          onClick={() => {
+            const anchor = document.querySelector(`#${targetId}`);
+            anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+        >
+          {name}
+        </Link>
       </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
