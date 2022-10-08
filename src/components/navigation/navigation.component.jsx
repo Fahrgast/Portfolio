@@ -2,18 +2,22 @@ import "./navigation.styles.scss";
 
 import hamburger from "../../assets/shared/navbar/icon-hamburger.svg";
 import closeIcon from "../../assets/shared/navbar/icon-close.svg";
-import logoBubble from "../../assets/shared/navbar/logo-bubble.png";
 import logo from "../../assets/shared/navbar/Logo.png";
 import toggleBubble from "../../assets/shared/navbar/navbar-toggle-bubble.png";
+
+import bubblePaths from "../../assets/shared/background/paths/bubble-paths.json";
+import makeBubbleFluid from "../../components/bubble/bubble.js";
 
 import { useState } from "react";
 
 import { NavLink } from "react-router-dom";
 import NavigationLink from "./navigation-links/navigation-link.component";
+import { useEffect } from "react";
 
 const Navigation = () => {
   // Keeping track of the mobile navbar status
   const [navbarToggled, toggleNavbar] = useState(false);
+  const logoBubblePath = bubblePaths.logoBubble;
 
   const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
@@ -86,12 +90,36 @@ const Navigation = () => {
     }
   };
 
+  function resizeSVG(svgId) {
+    var svg = document.getElementById("logo-bubble");
+    // Get the bounds of the SVG content
+    var bbox = svg.getBBox();
+    // Update the width and height using the size of the contents
+    svg.setAttribute(
+      "viewBox",
+      `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`
+    );
+  }
+
+  useEffect(() => {
+    resizeSVG("logo-bubble");
+    makeBubbleFluid(1000, 7, 0.0003, 10);
+  });
+
   return (
     <div className="wrapper">
       <div className="navigation-container">
         <NavLink className="logo-container">
           <img src={logo} alt="logo" className="logo" />
-          <img src={logoBubble} alt="" className="logo-bubble" />
+          <svg
+            viewBox="0 0 438.92892 295.93677"
+            className="logo-bubble"
+            id="logo-bubble"
+          >
+            <g transform="translate(-2.1479911,0.38196723)">
+              <path d={logoBubblePath} id={`bubble-path-1000`} />
+            </g>
+          </svg>
         </NavLink>
         <div className="navigation-content-container">
           <img

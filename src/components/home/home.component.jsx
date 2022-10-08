@@ -1,6 +1,17 @@
 import "./home.styles.scss";
 
+import bubblePaths from "../../assets/shared/background/paths/bubble-paths.json";
+import makeBubbleFluid from "../../components/bubble/bubble.js";
+
+import { useEffect } from "react";
+
 const Home = () => {
+  const bottomRightPath = bubblePaths.backgroundBottomRight;
+
+  useEffect(() => {
+    makeBubbleFluid(6, 7, 0.0003, 10);
+  });
+
   return (
     <div className="home-container">
       <div className="home-text-container">
@@ -21,8 +32,15 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <img src="" alt="" className="image-bubble" />
-      <img src="" alt="" className="me" />
+      <svg
+        viewBox="0 0 153.41307 108.96785"
+        className="background-bottom-right"
+      >
+        <g transform="translate(-19.987011,-66.516075)">
+          <path d={bottomRightPath} id={`bubble-path-5`} />
+        </g>
+      </svg>
+      <img src="../../assets/Me.png" alt="Felix" className="me" />
     </div>
   );
 };

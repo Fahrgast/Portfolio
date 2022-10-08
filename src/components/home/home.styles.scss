@@ -25,8 +25,18 @@
         font-size: var(--text-fontsize);
     }
 
-    .image-bubble{
-        display: none;
+    .background-bottom-right{
+        position: fixed;
+        width: 80%;
+        overflow: visible;
+    
+        fill: var(--green);
+
+        z-index: var(--z-nav-link-bubble);
+    
+        bottom: -2rem;
+        right: -2rem;
+        filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
     }
 
     .me{
@@ -44,6 +54,12 @@
         .home-subheading{
             font-size: var(--heading-two-fontsize);
         }
+
+        .background-bottom-right{
+            fill:var(--blue);
+            width: 40%;
+            right: 5%;
+        }
     }
 
     @include utils.breakpoint(large){
@@ -57,18 +73,10 @@
             padding-top: 5rem;
         }
         
-        .image-bubble{
-            display: block;
-            content: url(../../assets/shared/background/background-right-bottom-blue.png);
-            position: fixed;
-            bottom: -2rem;
-            right: -2rem;
-            width: 450px;
-            height: 200px;
-            z-index: 1;
-
-            filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
-            opacity: 90%;
+        .background-bottom-right{
+            width: 30%;
+            opacity: 95%;
+            z-index: 1; 
         }
 
         .me{
@@ -86,9 +94,9 @@
             width: 55%;
         }
         
-        .image-bubble{
-            width: 550px;
-            height: 350px;
+        .background-bottom-right{
+            width: 30%;
+            bottom: 0;
         }
     }
 }

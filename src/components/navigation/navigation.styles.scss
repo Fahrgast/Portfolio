@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-
+    
     font-size: var(--heading-four-fontsize);
     letter-spacing: var(--navtext-spacing);
     text-transform: uppercase;
@@ -15,14 +15,19 @@
 
     .logo-container{
         .logo{
-            width: 55px;  
+            width: 40px;  
             z-index: var(z-nav-text);
         }
 
         .logo-bubble{
             position: absolute;
-            top: -2px;
-            left: -1px;
+            width: 115px;
+            transform: scaleY(0.75);
+            left: -0.5rem;
+            top: -15px;
+            fill: var(--green);
+            overflow: visible;
+
             z-index: var(--z-logo-bubble);
             filter: drop-shadow( 5px 5px 4px rgba(0, 0, 0, 0.25));
         }       
@@ -147,7 +152,8 @@
 
             .logo-bubble{
                 width: 125px;
-                height: 120px;
+                top: 0.5rem;
+                transform: scaleY(0.9);
             }
 
             .navigation-content-container{
@@ -172,7 +178,6 @@
 
             .logo-bubble{
                 width: 150px;
-                height: 140px;
             }
 
             .logo{

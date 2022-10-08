@@ -19,17 +19,7 @@
         width: 90%;
     }
 
-    .background-bottom-right{
-        position: fixed;
-        width: 80%;
-        overflow: visible;
-
-        fill: var(--green);
-
-        bottom: -2rem;
-        right: -2rem;
-        filter: drop-shadow( 10px 10px 4px rgba(0, 0, 0, 0.25));
-    }
+    
 
     .background-middle-left{
         position: fixed;
@@ -55,12 +45,6 @@
    
         }
 
-        .background-bottom-right{
-            fill:var(--blue);
-            width: 40%;
-            right: 5%;
-        }
-    
         .background-middle-left{
             fill:var(--blue);   
             
@@ -70,14 +54,10 @@
     @include utils.breakpoint(large){
         .background-top-right{
             width: 60%;
-
+            top: 0;
             transform: rotate(8deg);
         }
-    
-        .background-bottom-right{
-            width: 30%;
-        }
-    
+        
         .background-middle-left{
             width: 150%;
         }
@@ -86,14 +66,9 @@
     @include utils.breakpoint(xLarge){
         .background-top-right{
             width: 60%;
-            top: 0;
+            top: -10%;
 
             transform: rotate(8deg) scaleX(1.2) scaleY(0.7);
-        }
-    
-        .background-bottom-right{
-            width: 20%;
-            bottom: 0;
         }
     
         .background-middle-left{
