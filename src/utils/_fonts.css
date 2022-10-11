@@ -1,7 +1,7 @@
 :root{
-    --heading-fontsize: clamp(60px, 11vw, 100px);
+    --heading-fontsize: clamp(50px, 11vw, 120px);
     --heading-two-fontsize: clamp(25px, 6vw, 50px);
-    --heading-three-fontsize: clamp(20px, 4vw, 30px);
+    --heading-three-fontsize: clamp(22px, 4vw, 30px);
     --heading-four-fontsize: clamp(17px, 3vw, 25px);
     --nav-fontsize: clamp(17px, 2.3vw, 20px);
     --text-fontsize: clamp(16px, 2vw, 18px);;

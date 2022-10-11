@@ -1,6 +1,14 @@
+@use "../../utils/index" as utils;
+
 .about-container{
     flex: 1;
 
     width: 80%;
     margin: auto;
+
+    
+    @include utils.breakpoint(small){
+        margin-top: 6rem;
+    }
+
 }

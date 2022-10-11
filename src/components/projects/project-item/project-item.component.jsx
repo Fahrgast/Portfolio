@@ -23,6 +23,11 @@ const ProjectItem = ({ data, index }) => {
       <h3 className="project-title">{data.title}</h3>
       <img src={data.imageSrc} alt="" className="project-image" />
       <p className="project-description">{data.description}</p>
+      <div className="project-techs">
+        {data.tech.map((technology) => (
+          <p className="technology" key={technology}>{`${technology}`}</p>
+        ))}
+      </div>
       <div className="project-buttons">
         <div className="site-button link-button">
           <a

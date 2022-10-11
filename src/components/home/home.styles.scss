@@ -16,8 +16,14 @@
         font-weight: 400;
     }
 
+    .info{
+        font-size: var(--heading-three-fontsize);
+        font-family: var(--text-family);
+    }
+
     .home-subheading{
         font-size: var(--heading-three-fontsize);
+        font-weight: bold;
     }
 
     .text{
@@ -70,7 +76,7 @@
 
         .home-text-container{
             width: 65%;
-            padding-top: 5rem;
+            padding-top: 6rem;
         }
         
         .background-bottom-right{

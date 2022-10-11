@@ -61,11 +61,13 @@ const Navigation = () => {
 
     // Pop in Animation of the Navlinks on mobile
     async function popIn() {
+      var totalNavLinks =
+        document.querySelectorAll(".navlink-container").length;
       navLinksContainer.style.display = "flex";
       navigationContentContainer.classList.add("toggled");
       overlay.classList.add("overlay-toggled");
 
-      for (var i = 0; i < 4; i++) {
+      for (var i = 0; i < totalNavLinks; i++) {
         await timer(600);
         navItemBubble[i].classList.remove("pop-out");
         navItemBubble[i].classList.add("pop-in");
@@ -75,15 +77,17 @@ const Navigation = () => {
 
     // Pop Out Animation of the Navlinks on mobile
     async function popOut() {
-      for (var i = 0; i < 4; i++) {
+      var totalNavLinks =
+        document.querySelectorAll(".navlink-container").length;
+      for (var i = 0; i < totalNavLinks; i++) {
         navItemBubble[i].classList.remove("pop-in");
         navItemBubble[i].classList.add("pop-out");
       }
       await timer(750);
-      navLinkContainer[0].style.display = "none";
-      navLinkContainer[1].style.display = "none";
-      navLinkContainer[2].style.display = "none";
-      navLinkContainer[3].style.display = "none";
+
+      for (var i = 0; i < totalNavLinks; i++) {
+        navLinkContainer[i].style.display = "none";
+      }
 
       navLinksContainer.style.display = "none";
       navigationContentContainer.classList.remove("toggled");
@@ -131,11 +135,7 @@ const Navigation = () => {
           />
           <img src={toggleBubble} alt="" className="nav-toggle-bubble" />
           <div className="nav-links-container">
-            <NavigationLink
-              name="About Me"
-              targetId="about-container"
-              index={0}
-            />
+            <NavigationLink name="About" targetId="about-container" index={0} />
             <NavigationLink
               name="Skills"
               targetId="skills-container"
@@ -145,11 +145,6 @@ const Navigation = () => {
               name="Projects"
               targetId="projects-container"
               index={2}
-            />
-            <NavigationLink
-              name="Contact Me"
-              targetId="hired-container"
-              index={3}
             />
           </div>
         </div>

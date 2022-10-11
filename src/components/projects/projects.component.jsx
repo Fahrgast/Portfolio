@@ -20,33 +20,35 @@ const Projects = () => {
       imageSrc: projectImageOne,
       siteUrl: "https://fahrgast.github.io/spacetourism/",
       repository: "https://github.com/Fahrgast/spacetourism",
-      title: "Space Exploration Challenge",
+      title: "Space Exploration",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa tempore non saepe ad sequi eius quis in quisquam cum at unde animi nam, labore sed debitis velit dolore aliquid!",
+        "A multi-page website about space tourism. Learn about our universe, the exciting secrets it holds and how we are trying to explore it. Find out the amazing technology of space exploration",
+      tech: ["Javascript", "React", "Sass"],
     },
     {
       imageSrc: projectImageTwo,
       siteUrl: "https://fahrgast.github.io/Joblisting-Challenge/",
       repository: "https://github.com/Fahrgast/Joblisting-Challenge",
-      title: "Joblisting Platform Challenge",
+      title: "Joblisting Platform",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa tempore non saepe ad sequi eius quis in quisquam cum at unde animi nam, labore sed debitis velit dolore aliquid!",
+        "A single page job listing website. Users can filter existing Jobs by clicking on the specific categories. Jobs load dynamically and are initialized off a json file.",
+      tech: ["Javascript", "React", "CSS"],
     },
     {
       imageSrc: projectImageThree,
       siteUrl: "https://fahrgast.github.io/Bookmark/",
       repository: "https://github.com/Fahrgast/Bookmark",
-      title: "Bookmark Landing Page",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa tempore non saepe ad sequi eius quis in quisquam cum at unde animi nam, labore sed debitis velit dolore aliquid!",
+      title: "Bookmark",
+      description: "A simple landing page with different style elements",
+      tech: ["Javascript", "Sass"],
     },
     {
       imageSrc: projectImageFour,
       siteUrl: "https://fahrgast.github.io/Loopstudios/",
       repository: "https://github.com/Fahrgast/Loopstudios",
-      title: "Loopstudious Landing Page",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa tempore non saepe ad sequi eius quis in quisquam cum at unde animi nam, labore sed debitis velit dolore aliquid!",
+      title: "Loopstudios",
+      description: "A simple landing page with different style elements",
+      tech: ["HTML", "CSS"],
     },
   ];
 
