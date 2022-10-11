@@ -4,11 +4,14 @@ const About = () => {
   return (
     <div className="about-container" id="about-container">
       <h2>About Me</h2>
-      <p>Hello, my name is Felix and I'm a Frontend Developer.</p>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo hic
-        quibusdam eius quod perspiciatis deserunt atque doloribus, amet in
-        magnam totam velit possimus impedit nihil rem. Fuga eaque vitae porro?
+        Hello and welcome to my portfolio, my name is Felix. I'm a Frontend
+        Developer from Germany. I also have a bachelors degree in software
+        engineering.
+      </p>
+      <p>
+        At the age of 4 I started playing handball which has deeply engraved
+        team play into my DNA.
       </p>
     </div>
   );
