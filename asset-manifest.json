@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/Fahrgast/Portfolio/static/css/main.f04a0ac5.css",
+    "main.js": "/Fahrgast/Portfolio/static/js/main.6c197e2e.js",
+    "static/js/787.1ed0c42c.chunk.js": "/Fahrgast/Portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/Screenshot_space.png": "/Fahrgast/Portfolio/static/media/Screenshot_space.9c77e1338803ca273b8f.png",
+    "static/media/Screenshot_loopstudios.png": "/Fahrgast/Portfolio/static/media/Screenshot_loopstudios.b2c56204871c36e920d6.png",
+    "static/media/Screenshot_joblisting.png": "/Fahrgast/Portfolio/static/media/Screenshot_joblisting.a50b1964830c9fba290c.png",
+    "static/media/Screenshot_bookmark.png": "/Fahrgast/Portfolio/static/media/Screenshot_bookmark.8dfec44ad3e3e532fd41.png",
+    "static/media/Me.png": "/Fahrgast/Portfolio/static/media/Me.992740da2d328ea6c3c2.png",
+    "static/media/galaxy-brain-four.png": "/Fahrgast/Portfolio/static/media/galaxy-brain-four.813082acfb3a1fdd2bfb.png",
+    "static/media/galaxy-brain-three.png": "/Fahrgast/Portfolio/static/media/galaxy-brain-three.57991dee5cb88776a730.png",
+    "static/media/galaxy-brain-two.png": "/Fahrgast/Portfolio/static/media/galaxy-brain-two.f05eedb8f3968a6b039b.png",
+    "static/media/React.png": "/Fahrgast/Portfolio/static/media/React.abcef5bfe87fbfb7e77a.png",
+    "static/media/Sass.png": "/Fahrgast/Portfolio/static/media/Sass.79d6268b098024283ace.png",
+    "static/media/Js.png": "/Fahrgast/Portfolio/static/media/Js.f6c0c1c6292b15aea4a8.png",
+    "static/media/Bootstrap.png": "/Fahrgast/Portfolio/static/media/Bootstrap.7f9767a3a8dff0979261.png",
+    "static/media/galaxy-brain-one.png": "/Fahrgast/Portfolio/static/media/galaxy-brain-one.cc8aa108e9cf9806f211.png",
+    "static/media/html.png": "/Fahrgast/Portfolio/static/media/html.41fbb19b7b14e740e764.png",
+    "static/media/Css.png": "/Fahrgast/Portfolio/static/media/Css.be1f1141ee9be54302bb.png",
+    "index.html": "/Fahrgast/Portfolio/index.html",
+    "static/media/icon-close.svg": "/Fahrgast/Portfolio/static/media/icon-close.82ab6d78dbcd1572fac8e60c9345230e.svg",
+    "static/media/icon-hamburger.svg": "/Fahrgast/Portfolio/static/media/icon-hamburger.ffda712880813409cd2110a5ca84310c.svg",
+    "main.f04a0ac5.css.map": "/Fahrgast/Portfolio/static/css/main.f04a0ac5.css.map",
+    "main.6c197e2e.js.map": "/Fahrgast/Portfolio/static/js/main.6c197e2e.js.map",
+    "787.1ed0c42c.chunk.js.map": "/Fahrgast/Portfolio/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f04a0ac5.css",
+    "static/js/main.6c197e2e.js"
+  ]
+}
